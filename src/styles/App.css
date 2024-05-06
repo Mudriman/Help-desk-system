@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  width: 800px;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивание по верхнему краю */
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.post{
+  display: flex;
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post__buttons {
+  display: flex;
+}
+
+.post-enter {
+  transform: translateX(-350px);
+}
+.post-enter-active {
+  transform: translateX(0px);
+  transition: all 500ms ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  transform: translateX(-350px);
+  transition: all 500ms ease-in;
+}
+
+.page__wrapper {
+  margin-top: 30px;
+  display: flex;
+}
+
+.page {
+  padding: 10px;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.page__current {
+  padding: 10px;
+  border: 2px solid orange;
+  font-weight: bold;
+}
