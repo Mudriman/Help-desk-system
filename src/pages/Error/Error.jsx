@@ -43,7 +43,10 @@ const Error = () => {
         };
       }, []); // Пустой массив зависимостей означает, что эффект будет запускаться только при монтировании компонента
     return (
-        <div className={styles.wrapperEr}>
+        <div className={styles.mainContainer}>
+          <div className={styles.marginer}>
+          </div>
+          <div className={styles.wrapperEr}>
             <div className={styles.containerEr}>
                 <h1 className={styles.firstFour}>4</h1>
                 <div className={styles.cogWheel1}>
@@ -73,6 +76,7 @@ const Error = () => {
                 <h1 className={styles.secondFour}>4</h1>
                 <p className={styles.wrongPara}>Uh Oh! Page not found!</p>
             </div>
+        </div>
         </div>
     );
 };

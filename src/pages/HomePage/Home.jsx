@@ -1,14 +1,31 @@
 import React, {useState} from 'react';
 import './Home.scss';
-import TheComponent from '../../components/LeftNavBar/TheComponent';
-import Navbar from '../../components/UI/Navbar/Navbar';
-import Ham from "..//../components/LeftNavBar/Hamburger";
+import Widget from '../../components/widget/Widget';
+import Feature from '../../components/feature/Feature';
+import Chart from '../../components/chart/Chart';
+import Table from '../../components/table/Table';
+
+
 
 const Home = () => {
-    
     return (
-        <div>
-            <h1>Я домашняя страница</h1>
+        <div className='home'>
+            <div className="homeContainer">
+                <div className="widgets">
+                    <Widget type="user"/>
+                    <Widget type="order"/>
+                    <Widget type="earning"/>
+                    <Widget type="balance"/>
+                </div>
+                <div className="charts">
+                    <Feature/>
+                    <Chart title="Last 6-th Months (Revenue)" aspect={2 / 1}/>
+                </div>
+                <div className="listContainer">
+                    <div className="listTitle">Latest Transaction</div>
+                    <Table/>
+                </div>
+            </div>
         </div>
     );
 };

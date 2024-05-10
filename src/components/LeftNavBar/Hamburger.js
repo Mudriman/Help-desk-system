@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const HamWrapper = styled.div`
  position: absolute;
- top: 20px;
+ top: 14px;
  right: 15px;
  cursor: pointer;
  > i {

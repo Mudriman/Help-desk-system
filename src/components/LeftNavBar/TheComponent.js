@@ -96,9 +96,14 @@ const makeButtons = [
         title: "Календарь"
     },
     {
-        to: "/messages",
-        icon: <i className="fa-solid fa-comment"></i>,
-        title: "Сообщения"
+        to: "/users",
+        icon: <i class="fa-solid fa-users"></i>,
+        title: "Пользователи"
+    },
+    {
+        to: "/products",
+        icon: <i class="fa-solid fa-computer"></i>,
+        title: "Инвентарь"
     },
     {
         to: "/wallets",
@@ -130,7 +135,6 @@ const TheComponent = ({ open, setOpen, handleClick }) => {
                 }
             }
         }
-        console.log("run")
         window.addEventListener("resize", updateSize);
         updateSize();
         return () => window.removeEventListener("resize", updateSize);

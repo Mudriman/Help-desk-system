@@ -1,0 +1,34 @@
+.table{
+    .cellWrapper{
+        display: flex;
+        align-items: center;
+
+        .image{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit:cover;
+        }
+    }
+
+    .status{
+        padding: 5px;
+        border-radius: 5px;
+
+        &.Shipped{
+            color: rgb(171, 24, 13);
+            background-color: rgba(238, 196, 187, 0.151);
+        }
+
+        &.Pending{
+            color: goldenrod;
+            background-color: rgba(189, 189, 3, 0.103);
+        }
+
+        &.Delivered{
+            color: green;
+            background-color: rgba(0, 128, 0, 0.151);
+        }
+    }
+}

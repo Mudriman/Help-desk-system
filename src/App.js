@@ -5,6 +5,7 @@ import Navbar from './components/UI/Navbar/Navbar';
 import AppRouter from './components/AppRouter';
 import { AuthContext } from './context';
 import TheComponent from './components/LeftNavBar/TheComponent';
+import "./styles/dark.scss";
 
 import Ham from "./components/LeftNavBar/Hamburger";
 
@@ -25,7 +26,8 @@ function App() {
     setLoading(false);
   }, [])
   return (
-    <AuthContext.Provider value={{
+    <div className="app dark">
+      <AuthContext.Provider value={{
       isAuth,
       setIsAuth,
       isLoading
@@ -41,6 +43,7 @@ function App() {
           <AppRouter/>
         </BrowserRouter>
       </AuthContext.Provider>
+    </div>
   )
 }
 
