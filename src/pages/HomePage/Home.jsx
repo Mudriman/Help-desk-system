@@ -5,6 +5,8 @@ import Feature from '../../components/feature/Feature';
 import Chart from '../../components/chart/Chart';
 import Table from '../../components/table/Table';
 import PageTitle from '../../components/pageTitle/PageTitle';
+import Analityc from '../../components/analitics/Analityc';
+import Footer from '../../components/UI/footer/Footer';
 
 
 
@@ -19,6 +21,10 @@ const Home = () => {
                     <Widget type="earning"/>
                     <Widget type="balance"/>
                 </div>
+                <div className="analitycContainer">
+                    <div className="analitycTitle">Главные показатели</div>
+                    <Analityc/>
+                </div>
                 <div className="charts">
                     <Feature/>
                     <Chart title="Last 6-th Months (Revenue)" aspect={2 / 1}/>
@@ -27,6 +33,7 @@ const Home = () => {
                     <div className="listTitle">Latest Transaction</div>
                     <Table/>
                 </div>
+                <Footer/>
             </div>
         </div>
     );

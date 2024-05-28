@@ -12,6 +12,7 @@ import { DarkModeContext } from '../../../context/darkModeContext';
 import NavNotice from '../../navNotice/NavNotice';
 import NavMessage from '../../navMessage/NavMessage';
 import NavAvatar from '../../navAvatar/NavAvatar';
+import FullScreenToggle from '../fullScreen/FullScreenToggle';
 
 
 const Navbar = () => {
@@ -38,7 +39,7 @@ const Navbar = () => {
                             />
                         </div>
                         <div className="item">
-                            <FullscreenExitOutlinedIcon className='icon'/>
+                            <FullScreenToggle className='icon'/>
                         </div>
                         <div className="item">
                             <NavNotice/>

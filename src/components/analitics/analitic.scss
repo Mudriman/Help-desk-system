@@ -1,0 +1,11 @@
+.analitics{
+    .row{
+        .card-row{
+            flex-wrap: nowrap;
+            @media (max-width: 990px) {
+                flex-wrap: wrap; // Изменение при ширине экрана < 775px
+            }
+        }
+
+    }
+}

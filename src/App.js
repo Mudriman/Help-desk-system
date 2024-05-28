@@ -17,6 +17,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 import Ham from "./components/LeftNavBar/Hamburger";
+import BackToTop from './components/UI/backToTop/BackToTop';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
             handleClick={handleClick}
           />
           <Navbar/>
+          <BackToTop/>
           <AppRouter/>
         </BrowserRouter>
       </AuthContext.Provider>
