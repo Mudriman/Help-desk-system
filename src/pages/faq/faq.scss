@@ -1,0 +1,54 @@
+.about {
+    display: flex;
+
+    .marginer {
+        margin-right: 250px; /* Дополнительный отступ справа для визуального разделения */
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex: 1; /* Занимать оставшееся пространство */
+        padding: 20px;
+        width: 100%;
+        
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #505050;
+        }
+
+        .mainContent {
+            font-size: 16px;
+            width: 100%;
+            display: block;
+            .bub{
+
+                background-color: rgba(128, 128, 128, 0.192);
+            }
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    .about {
+        flex-direction: column;
+
+        .marginer {
+            margin-right: 0; /* Удалить отступ */
+            margin-bottom: 20px; /* Добавить отступ снизу для визуального разделения */
+        }
+
+        .content {
+            .header {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .mainContent {
+                font-size: 12px;
+                display: flex;
+            }
+        }
+    }
+}

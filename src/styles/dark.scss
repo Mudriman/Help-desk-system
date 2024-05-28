@@ -22,15 +22,45 @@
         }
     }
   
-    .datatable{
-        .datagrid{
-            color: grey;
+    .datatable {
+        .datagrid {
+          color: gray;
+          border: none;
+    
+          .viewButton,
+          .deleteButton,
+          .cellWithStatus {
+            color: gray;
             border: none;
+          }
+        }
+      }
+    
 
-            .editButton, .deleteButton{
-                color: gray;
-                border: none;
+    input{
+        background-color: transparent;
+    }
+
+    .LogoWrapper{
+        a {
+            color: #d3d3d3;
+            div{
+                background: #333;
+                i{
+                    color: #d3d3d3;
+                }
             }
         }
+    }
+
+    .hamWrapper{
+        i {
+           color: #999;
+        }
+    }
+
+    .sideBarBody{
+        background: linear-gradient(0deg, #0f2a8a, #0a54c1);
+        color: gray;
     }
 }

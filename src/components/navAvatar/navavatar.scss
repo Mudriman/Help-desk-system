@@ -1,0 +1,43 @@
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.nav-link{
+    padding:0;
+}
+.profile {
+    min-width: 240px;
+    padding-bottom: 0;
+    inset: 37px -10px auto auto !important;
+
+    .dropdown-header {
+        h6 {
+            font-size: 18px;
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #444444;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .dropdown-item {
+        font-size: 14px;
+        padding: 10px 15px;
+        transition: 0.3s;
+
+        i {
+            margin-right: 10px;
+            font-size: 18px;
+            line-height: 0;
+        }
+
+        &:hover {
+            background-color: #f6f9ff;
+        }
+    }
+}

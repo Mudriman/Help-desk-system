@@ -1,119 +1,133 @@
-export const userColumns = [{ field: 'id', headerName: 'ID', width: 70 }, {
-        field: "user", headerName:"User", width: 150, renderCell: (params) => {
+export const userColumns = [
+    { field: "id", headerName: "ID", width: 70 },
+    {
+        field: "user",
+        headerName: "User",
+        flex: 2,
+        renderCell: (params) => {
             return (
                 <div className="cellWithImg">
-                    <img className="cellImg" src={params.row.img} alt="avatar"/>
+                    <img className="cellImg" src={params.row.img} alt="avatar" />
                     {params.row.username}
                 </div>
-            )
-        }
+            );
+        },
     },
     {
-        field: "email", 
-        headerName:"Email", 
-        width: 230,
+        field: "email",
+        headerName: "Email",
+        flex: 2,
+    },
+
+    {
+        field: "age",
+        headerName: "Age",
+        flex: 1,
     },
     {
-        field: "age", 
-        headerName:"Age", 
-        width: 30,
-    },
-    {
-        field: "status", 
-        headerName:"Status", 
-        width: 160,
-        renderCell:(params) => {
-            return(
-                <div className={`cellWithStatus`}>
-                    <span className={`statusText ${params.row.status}`}>
+        field: "status",
+        headerName: "Status",
+        flex: 2,
+        renderCell: (params) => {
+            return (
+                <div className="cellWithStatus">
+                    <span className={params.row.status}>
                         {params.row.status}
                     </span>
                 </div>
-            )
-        }
+            );
+        },
     },
-];
-
-
+  ];
+//temporary data
 export const userRows = [
     {
-        id: 1,
-        username:"Snow",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "active",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 1,
+      username: "Snow",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      status: "active",
+      email: "1snow@gmail.com",
+      age: 35,
+      access: "admin",
     },
     {
-        id: 2,
-        username:"Jhon",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "passive",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 2,
+      username: "Jamie Lannister",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "2snow@gmail.com",
+      status: "passive",
+      age: 42,
+      access: "manager",
     },
     {
-        id: 3,
-        username:"Bill",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "pending",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 3,
+      username: "Lannister",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "3snow@gmail.com",
+      status: "pending",
+      age: 45,
+      access: "user",
     },
     {
-        id: 4,
-        username:"Max",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "active",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 4,
+      username: "Stark",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "4snow@gmail.com",
+      status: "active",
+      age: 16,
+      access: "admin",
     },
     {
-        id: 5,
-        username:"Shaman",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "pending",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 5,
+      username: "Targaryen",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "5snow@gmail.com",
+      status: "passive",
+      age: 22,
+      access: "manager",
     },
     {
-        id: 6,
-        username:"Meladze",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "active",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 6,
+      username: "Melisandre",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "6snow@gmail.com",
+      status: "active",
+      age: 15,
+      access: "user",
     },
     {
-        id: 7,
-        username:"Agutin",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "active",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 7,
+      username: "Clifford",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "7snow@gmail.com",
+      status: "passive",
+      age: 44,
+      access: "manager",
     },
     {
-        id: 8,
-        username:"Rozenbaum",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "passive",
-        email: "popkadruga@mail.com",
-        age: "34",
+      id: 8,
+      username: "Frances",
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      email: "8snow@gmail.com",
+      status: "active",
+      age: 36,
+      access: "admin",
     },
     {
         id: 9,
-        username:"Shishkovizkiy",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "active",
-        email: "popkadruga@mail.com",
-        age: "34",
+        username: "Roxie",
+        img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        email: "snow@gmail.com",
+        status: "pending",
+        age: 65,
     },
     {
         id: 10,
-        username:"Didulya",
-        img: "https://avatars.dzeninfra.ru/get-zen_doc/2804475/pub_637cee37f1bc9c18069108dc_637d1e3896aba95cd2217367/scale_1200",
-        status: "passive",
-        email: "popkadruga@mail.com",
-        age: "34",
+        username: "Roxie",
+        img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        email: "snow@gmail.com",
+        status: "active",
+        age: 65,
+        access: "admin",
     },
 ];

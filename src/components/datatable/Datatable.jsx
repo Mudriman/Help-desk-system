@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./datatable.scss";
 
 
@@ -8,24 +8,34 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const Datatable = () => {
+    const [data, setData] = useState(userRows);
+
+    const handleDelete = (id) => {
+        setData(data.filter((item) => item.id !== id));
+    };
 
     const actionColumn = [
         {
-            field: "action", 
-            headerName: "Action", 
-            width: 200, 
-            renderCell: () => {
+            field: "action",
+            headerName: "Action",
+            width: 200,
+            renderCell: (params) => {
                 return (
-                    <div className='cellAction'>
-                        <Link to="/users/test">
-                        <div className='viewButton'>
-                            <span className='viewButtonStyle'>View</span>
-                        </div>
+                    <div className="cellAction">
+                        <Link to="/users/test" style={{ textDecoration: "none" }}>
+                            <span className="viewButton">View</span>
                         </Link>
-                        <div className='deleteButton'>
-                            <span className='deleteButtonStyle'>Delete</span>
+                        <div className="deleteDivButton">
+                            <span
+                                className="deleteButton"
+                                onClick={() => handleDelete(params.row.id)}
+                            >
+                                Delete
+                            </span>
                         </div>
+
                     </div>
                 );
             },
@@ -33,29 +43,24 @@ const Datatable = () => {
     ];
     return (
         <div className="datatable">
-            <div className="datatableTitle">
-                Add New User
-                <Link 
-                    to="/users/new" 
-                    style={{ textDecotation: "none"}}
-                    className="link"
-                >
-                    Add New
-                </Link>
+            
+                <div className="datatableTitle">
+                    Add New User
+                    <Link to="/users/new" className="link">
+                        Add New
+                    </Link>
+                </div>
+                <DataGrid
+                    className="datagrid"
+                    rows={data}
+                    columns={userColumns.concat(actionColumn)}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    checkboxSelection
+                />
             </div>
-            <DataGrid
-                className='datagrid'
-                rows={userRows}
-                columns={userColumns.concat(actionColumn)}
-                initialState={{
-                    pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
-                    },
-                }}
-                pageSizeOptions={[5, 10]}
-                checkboxSelection
-            />
-        </div>
+
+
     );
 };
 

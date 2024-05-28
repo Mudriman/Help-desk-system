@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import { Scrollbar } from 'react-scrollbars-custom';
 import { AuthContext } from '../../context';
 
+
 const SideBarWrapper = styled.div`
  position:fixed;
  top: 0;
@@ -23,15 +24,6 @@ const SideBarWrapper = styled.div`
  }
 `;
 
-const SideBarBody = styled.div`
- background: linear-gradient(0deg, #3358f4, #1d8cf8);
- height: 100vh;
- overflow: hidden;
- @media (max-width: 775px) {
-    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
-    0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)
- }
-`;
 
 const UnorderList = styled.ul`
  position: relative;
@@ -81,11 +73,6 @@ const makeButtons = [
         subBtn: ["Стиль", "Элементы", "Портфолио"]
     },
     {
-        to: "/revenue",
-        icon: <i className="fa-solid fa-square-poll-vertical"></i>,
-        title: "Доход"
-    },
-    {
         to: "/analytics",
         icon: <i className="fa-solid fa-chart-pie"></i>,
         title: "Аналитика"
@@ -103,12 +90,7 @@ const makeButtons = [
     {
         to: "/products",
         icon: <i class="fa-solid fa-computer"></i>,
-        title: "Инвентарь"
-    },
-    {
-        to: "/wallets",
-        icon: <i className="fa-solid fa-wallet"></i>,
-        title: "Кошелек",
+        title: "Инвентарь",
         span: "New"
     },
     {
@@ -140,10 +122,10 @@ const TheComponent = ({ open, setOpen, handleClick }) => {
         return () => window.removeEventListener("resize", updateSize);
     }, [open, setOpen]);
     return (
-        isAuth ? <div>
+        isAuth ? <div className='darkNavbar'>
                     <NegativeSidebar open={open} onClick={handleClick} />
                     <SideBarWrapper open={open}>
-                        <SideBarBody>
+                        <div className='sideBarBody'>
                             <Logo />
                             <Scrollbar style={{ width: 250, height: '82.55vh' }}>
                             <UnorderList>
@@ -162,7 +144,7 @@ const TheComponent = ({ open, setOpen, handleClick }) => {
                             </UnorderList>
                             </Scrollbar>
                             <Footer />
-                        </SideBarBody>
+                        </div>
                     </SideBarWrapper>
                 </div>
         : <div>

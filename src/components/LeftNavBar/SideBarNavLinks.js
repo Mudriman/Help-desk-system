@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
 import { AuthContext } from '../../context';
 
+
 export const NavLinks = styled(NavLink)`
 position: relative;
  color: #fff;

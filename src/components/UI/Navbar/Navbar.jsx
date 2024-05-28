@@ -7,31 +7,20 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import { DarkModeContext } from '../../../context/darkModeContext';
+import NavNotice from '../../navNotice/NavNotice';
+import NavMessage from '../../navMessage/NavMessage';
+import NavAvatar from '../../navAvatar/NavAvatar';
 
 
 const Navbar = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
-    const logout = () => {
-        setIsAuth(false);
-        localStorage.removeItem('auth')
-    }
+    const {dispatch} = useContext(DarkModeContext);
+    
     return (
         isAuth 
-            // ?   <div className="navbar">
-            // <MyButton onClick={logout}>
-            //     Выйти
-            // </MyButton>
-            // <div className="navbar__links">
-            //     <Link to="/about">О сайте</Link>
-            //     <Link to="/posts">Посты</Link>
-            // </div>
             ? <div className="navbar">
-                <div className="marginer">
-                    
-                </div>
                 <div className="wrapper">
                     <div className="search">
                         <input type="text" placeholder='Search...'/>
@@ -43,28 +32,23 @@ const Navbar = () => {
                             English
                         </div>
                         <div className="item">
-                            <DarkModeOutlinedIcon className='icon'/>
+                            <DarkModeOutlinedIcon 
+                                className='icon' 
+                                onClick={()=>dispatch({type:"TOGGLE"})}
+                            />
                         </div>
                         <div className="item">
                             <FullscreenExitOutlinedIcon className='icon'/>
                         </div>
                         <div className="item">
-                            <NotificationsNoneOutlinedIcon className='icon'/>
-                            <div className="counter">1</div>
+                            <NavNotice/>
                         </div>
                         <div className="item">
-                            <ChatBubbleOutlineOutlinedIcon className='icon'/>
-                            <div className="counter">2</div>
+                            <NavMessage/>
                         </div>
+
                         <div className="item">
-                            <ListOutlinedIcon className='icon'/>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="https://i0.wp.com/blogs.embarcadero.com/wp-content/uploads/2020/07/pexels-photo-941693.jpeg?ssl=1"
-                                alt=""
-                                className="avatar"
-                            />
+                            <NavAvatar/>
                         </div>
                     </div>
                 </div>

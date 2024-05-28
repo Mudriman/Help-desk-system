@@ -5,10 +5,15 @@ import { SignupForm } from './signupForm';
 import { motion } from 'framer-motion';
 import { AccountContext } from './accountContext'
 
+const CenteredContainer = styled.div`
+  display: grid;
+  place-items: center;
+  height: 100vh;
+`;
+
 const BoxContainer = styled.div`
-  margin-top: 20vh;
   width: 280px;
-  min-height: 550px;
+  min-height: 540px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
@@ -118,35 +123,38 @@ export default function AccountBox(props) {
     }, 400);
   }
 
-  const contextValue = {switchToSignup, switchToSignin};
+  const contextValue = { switchToSignup, switchToSignin };
 
-  
+
   return (
-  <AccountContext.Provider value={contextValue}>
-  <BoxContainer>
-    <TopContainer>
-      <BackDrop 
-        initial={false}
-        animate={isExpanded ? "expanded" : "collapsed"}
-        variants={backdropVariants}
-        transition={expandingTransition}
-      />
-      {active === "signin" && <HeaderContainer>
-        <HeaderText>Добро</HeaderText>
-        <HeaderText>Пожаловать</HeaderText>
-        <SmallText>Авторизуйтесь, чтобы продолжить!</SmallText>
-      </HeaderContainer>}
-      {active === "signup" && <HeaderContainer>
-        <HeaderText>Создать</HeaderText>
-        <HeaderText>Аккаунт</HeaderText>
-        <SmallText>Зарегистрируйтесь, чтобы продолжить!</SmallText>
-      </HeaderContainer>}
-    </TopContainer>
-    <InnerContainer>
-      {active === "signin" && <LoginForm />}
-      {active === "signup" && <SignupForm />}
-    </InnerContainer>
-  </BoxContainer>
-  </AccountContext.Provider>  
+    <AccountContext.Provider value={contextValue}>
+      <CenteredContainer>
+        <BoxContainer>
+          <TopContainer>
+            <BackDrop
+              initial={false}
+              animate={isExpanded ? "expanded" : "collapsed"}
+              variants={backdropVariants}
+              transition={expandingTransition}
+            />
+            {active === "signin" && <HeaderContainer>
+              <HeaderText>Добро</HeaderText>
+              <HeaderText>Пожаловать</HeaderText>
+              <SmallText>Авторизуйтесь, чтобы продолжить!</SmallText>
+            </HeaderContainer>}
+            {active === "signup" && <HeaderContainer>
+              <HeaderText>Создать</HeaderText>
+              <HeaderText>Аккаунт</HeaderText>
+              <SmallText>Зарегистрируйтесь, чтобы продолжить!</SmallText>
+            </HeaderContainer>}
+          </TopContainer>
+          <InnerContainer>
+            {active === "signin" && <LoginForm />}
+            {active === "signup" && <SignupForm />}
+          </InnerContainer>
+        </BoxContainer>
+      </CenteredContainer>
+
+    </AccountContext.Provider>
   );
 }
