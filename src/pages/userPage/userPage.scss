@@ -1,0 +1,12 @@
+.mainUser{
+    
+    height: 100vh;
+    padding-left: 250px;
+}
+
+@media (max-width: 775px) {
+    .mainUser {
+        padding-left: 0px;
+        /* Удалить отступ */
+    }
+}

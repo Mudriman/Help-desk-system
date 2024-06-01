@@ -15,7 +15,6 @@ import 'remixicon/fonts/remixicon.css'
 //import bootstrap js
 import 'bootstrap/dist/js/bootstrap.min.js';
 
-
 import Ham from "./components/LeftNavBar/Hamburger";
 import BackToTop from './components/UI/backToTop/BackToTop';
 

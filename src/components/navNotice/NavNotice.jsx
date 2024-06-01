@@ -14,7 +14,7 @@ const NavNotice = () => {
                     У вас 4 новых уведомления
                     <a href='#'>
                         <span className="badge rounded-pill bg-primary p-2 ms-2">
-                            View all
+                            Посмотреть все
                         </span>
                     </a>
                 </li>
@@ -26,9 +26,9 @@ const NavNotice = () => {
                 <li className="notification-item">
                     <i className="bi bi-exclamation-circle text-warning"></i>
                     <div>
-                        <h4>Lorem Ipsum</h4>
-                        <p>Quae mumbae fumtae</p>
-                        <p>30 min.ago</p>
+                        <h4>Осторожно</h4>
+                        <p>Вы давно не меняли пароль</p>
+                        <p>30 мин. назад</p>
                     </div>
                 </li>
 
@@ -39,9 +39,9 @@ const NavNotice = () => {
                 <li className="notification-item">
                     <i className="bi bi-x-circle text-danger"></i>
                     <div>
-                        <h4>Atque rerum nesciunt</h4>
-                        <p>Quae mumbae fumtae</p>
-                        <p>1 hr.ago</p>
+                        <h4>Ваш запрос отклонен</h4>
+                        <p>Директор не может одобрить</p>
+                        <p>1 ч.назад</p>
                     </div>
                 </li>
 
@@ -52,9 +52,9 @@ const NavNotice = () => {
                 <li className="notification-item">
                     <i className="bi bi-check-circle text-success"></i>
                     <div>
-                        <h4>Sit rerum fuga</h4>
-                        <p>Quae mumbae fumtae</p>
-                        <p>1 hr.ago</p>
+                        <h4>Решено</h4>
+                        <p>Ваша заявка поменяла статус</p>
+                        <p>1 ч.назад</p>
                     </div>
                 </li>
 
@@ -65,9 +65,9 @@ const NavNotice = () => {
                 <li className="notification-item">
                     <i className="bi bi-info-circle text-primary"></i>
                     <div>
-                        <h4>Dicta reprehenderit</h4>
-                        <p>Quae mumbae fumtae</p>
-                        <p>4 hrs.ago</p>
+                        <h4>Новое</h4>
+                        <p>У вас новый комментарий</p>
+                        <p>4 ч.назад</p>
                     </div>
                 </li>
 
@@ -76,7 +76,7 @@ const NavNotice = () => {
                 </li>
 
                 <li className="dropdown-footer">
-                    <a href="#">Show all notifications</a>
+                    <a href="#">Показать все</a>
                 </li>
             </ul>
         </li>

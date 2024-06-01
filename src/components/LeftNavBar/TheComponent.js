@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useContext } from 'react';
+import React, { useLayoutEffect, useContext, useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -54,60 +54,21 @@ const NegativeSidebar = styled.div`
  }
 `;
 
-const makeButtons = [
-    {
-        to: "/",
-        icon: <i className="fa-solid fa-house"></i>,
-        title: "Главная"
-    },
-    {
-        to: "/profile",
-        icon: <i className="fa-solid fa-id-card"></i>,
-        title: "Профиль",
-        subBtn: ["Пароль", "Почта", "Аккаунт"]
-    },
-    {
-        to: "/features",
-        icon: <i className="fa-solid fa-bag-shopping"></i>,
-        title: "Возможности",
-        subBtn: ["Стиль", "Элементы", "Портфолио"]
-    },
-    {
-        to: "/analytics",
-        icon: <i className="fa-solid fa-chart-pie"></i>,
-        title: "Аналитика"
-    },
-    {
-        to: "/calendar",
-        icon: <i className="fa-solid fa-calendar-days"></i>,
-        title: "Календарь"
-    },
-    {
-        to: "/users",
-        icon: <i class="fa-solid fa-users"></i>,
-        title: "Пользователи"
-    },
-    {
-        to: "/products",
-        icon: <i class="fa-solid fa-computer"></i>,
-        title: "Инвентарь",
-        span: "New"
-    },
-    {
-        to: "/settings",
-        icon: <i className="fa-solid fa-gear"></i>,
-        title: "Настройки"
-    },
-    {
-        to: "/login",
-        icon: <i className="fa-solid fa-sign-out"></i>,
-        title: "Выйти",
-        onClickS: "logout"
-    }
-];
-
 const TheComponent = ({ open, setOpen, handleClick }) => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
+    const [items, setItems] = useState([]);
+    const fetchData = () => {
+        fetch('http://localhost:4000/menu')
+            .then(res => res.json())
+            .then(data => {
+                setItems(data);
+            })
+            .catch(e => console.log(e.message));
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     useLayoutEffect(() => {
         function updateSize() {
@@ -121,6 +82,7 @@ const TheComponent = ({ open, setOpen, handleClick }) => {
         updateSize();
         return () => window.removeEventListener("resize", updateSize);
     }, [open, setOpen]);
+
     return (
         isAuth ? <div className='darkNavbar'>
                     <NegativeSidebar open={open} onClick={handleClick} />
@@ -129,7 +91,7 @@ const TheComponent = ({ open, setOpen, handleClick }) => {
                             <Logo />
                             <Scrollbar style={{ width: 250, height: '82.55vh' }}>
                             <UnorderList>
-                                {makeButtons.map((btn, i) => (
+                                {items.map((btn, i) => (
                                     <SideBarButton
                                         key={i}
                                         to={btn.to}

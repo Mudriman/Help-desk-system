@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Error from '../pages/Error/Error';
 import { privateRoutes, publicRoutes } from '../router';
 import { AuthContext } from '../context';
-import Posts from '../pages/Posts';
 import Loader from './UI/Loader/Loader';
 
 const AppRouter = () => {
@@ -22,7 +21,7 @@ const AppRouter = () => {
                             exact={route.exact}
                         />
                      )}
-                     <Route path="/login" element={<Navigate to="/about" replace />} />
+                     <Route path="/login" element={<Navigate to="/home" replace />} />
                     <Route path="/" element={<Navigate to="/" replace />} />
                     <Route path="*" element={<Error />} />
                  </Routes>

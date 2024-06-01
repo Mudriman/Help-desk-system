@@ -6,7 +6,7 @@ import './leftnavbar.scss';
 const Logo = () => {
     return (
         <div className='LogoWrapper'>
-            <NavLink to="/posts">
+            <NavLink to="/">
                 <div>
                     <i className="fa-solid fa-ticket"></i>
                 </div>

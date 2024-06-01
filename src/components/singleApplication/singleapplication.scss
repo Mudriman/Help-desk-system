@@ -1,0 +1,86 @@
+.single-application {
+    .backArrow {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #0056b3;
+            }
+
+            i {
+                font-size: 1.5rem;
+                margin-right: 8px;
+                transition: transform 0.3s ease;
+            }
+
+            .viewButton {
+                font-size: 1.2rem;
+                font-weight: 500;
+                transition: transform 0.3s ease, color 0.3s ease;
+            }
+
+            &:hover i,
+            &:hover .viewButton {
+                transform: translateX(-5px);
+            }
+        }
+    }
+    .ticket-container{
+        margin: 20px;
+        .dashboard.section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            .info-field {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: #ffffff;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                margin-bottom: 10px;
+    
+                label {
+                    font-weight: bold;
+                    margin-right: 10px;
+                }
+    
+                span {
+                    flex-grow: 1;
+                    text-align: right;
+                    color: #495057;
+                }
+            }
+    
+            // Дополнительные стили для улучшения внешнего вида
+            .info-field:nth-child(odd) {
+                background-color: #f1f3f5;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .single-application {
+        .info-field {
+            flex-direction: column;
+            align-items: flex-start;
+            
+            span {
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+    }
+}

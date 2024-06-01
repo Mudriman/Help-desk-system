@@ -1,13 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from "react-router-dom";
-import MyButton from '../button/MyButton';
 import { AuthContext } from '../../../context';
 import './navbar.scss';
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
-import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from '../../../context/darkModeContext';
 import NavNotice from '../../navNotice/NavNotice';
 import NavMessage from '../../navMessage/NavMessage';

@@ -1,0 +1,10 @@
+.singleapplicationpage{
+    padding-left: 250px;
+}
+
+@media (max-width: 775px) {
+    .singleapplicationpage {
+        padding-left: 0px;
+        /* Удалить отступ */
+    }
+}

@@ -25,4 +25,44 @@
         background-color: rgba(189, 189, 3, 0.103);
       }
     }
+
+    .priority{
+      padding: 5px;
+      border-radius: 5px;
+      &.Low{
+        background-color: #6c757d59;
+        color: rgb(245, 245, 245);
+      }
+      &.Base{
+        background-color: #28a7465e;
+        color: #28a745;
+      }
+      &.High{
+        background-color: #fd7d1465;
+        color: #fd7e14;
+      }
+
+      &.Critical{
+        background-color: #dc354656;
+        color: #dc3545;
+      }
+    }
+
+    .cellAction {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .viewButton {
+        padding: 2px 5px;
+        border-radius: 5px;
+        color: darkblue;
+        border: 1px dotted rgba(0, 0, 139, 0.596);
+        cursor: pointer;
+        &:hover{
+          color: rgba(56, 56, 179, 0.685);
+        }
+      }
+    }
   }

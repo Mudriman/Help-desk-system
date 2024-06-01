@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import './Home.scss';
+import React, {useState, useEffect} from 'react';
+import './analytic.scss';
 import Widget from '../../components/widget/Widget';
 import Feature from '../../components/feature/Feature';
 import Chart from '../../components/chart/Chart';
@@ -11,6 +11,26 @@ import Footer from '../../components/UI/footer/Footer';
 
 
 const Home = () => {
+    const [columns, setColumns] = useState([]);
+    const [rows, setRows] = useState([]);
+    const fetchData = () => {
+        fetch('http://localhost:4000/userApplicationRow')
+            .then(res => res.json())
+            .then(data => {
+                setColumns(data);
+            })
+            .catch(e => console.log(e.message));
+
+        fetch('http://localhost:4000/userApplicationColumns')
+            .then(res => res.json())
+            .then(data => {
+                setRows(data);
+            })
+            .catch(e => console.log(e.message));
+    }
+    useEffect(() => {
+        fetchData();
+    }, []);
     return (
         <div className='home'>
             <div className="homeContainer">
@@ -30,8 +50,8 @@ const Home = () => {
                     <Chart title="Last 6-th Months (Revenue)" aspect={2 / 1}/>
                 </div>
                 <div className="listContainer">
-                    <div className="listTitle">Latest Transaction</div>
-                    <Table/>
+                    <div className="listTitle">Последние Заявки</div>
+                    <Table columns={columns} rows={rows} />
                 </div>
                 <Footer/>
             </div>

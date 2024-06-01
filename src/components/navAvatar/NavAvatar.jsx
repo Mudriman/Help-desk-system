@@ -1,5 +1,6 @@
 import React from 'react';
 import './navavatar.scss';
+import { Link } from 'react-router-dom';
 
 const NavAvatar = () => {
     return (
@@ -19,18 +20,18 @@ const NavAvatar = () => {
 
                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li className="dropdown-header">
-                        <h6>Admin</h6>
-                        <span>Main admin</span>
+                        <h6>Админ</h6>
+                        <span>Главный админ</span>
                     </li>
                     <li>
                         <hr className="dropdown-divider" />
                     </li>
 
                     <li>
-                        <a href="#" className="dropdown-item d-flex align-items-center">
+                        <Link to="/profile" className="dropdown-item d-flex align-items-center">
                             <i className="bi bi-person"></i>
-                            <span>My profile</span>
-                        </a>
+                            <span>Мой профиль</span>
+                        </Link>
                     </li>
                     <li>
                         <hr className="dropdown-divider" />
@@ -38,7 +39,7 @@ const NavAvatar = () => {
                     <li>
                         <a href="#" className="dropdown-item d-flex align-items-center">
                             <i className="bi bi-gear"></i>
-                            <span>Account settings</span>
+                            <span>Настройки аккаунта</span>
                         </a>
                     </li>
                     <li>
@@ -47,7 +48,7 @@ const NavAvatar = () => {
                     <li>
                         <a href="#" className="dropdown-item d-flex align-items-center">
                             <i className="bi bi-question-circle"></i>
-                            <span>Need Help?</span>
+                            <span>Нужна помощь?</span>
                         </a>
                     </li>
                     <li>
@@ -56,7 +57,7 @@ const NavAvatar = () => {
                     <li>
                         <a href="#" className="dropdown-item d-flex align-items-center">
                             <i className="bi bi-box-arrow-right"></i>
-                            <span>Sign out</span>
+                            <span>Выйти</span>
                         </a>
                     </li>
                 </ul>

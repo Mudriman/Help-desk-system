@@ -7,7 +7,7 @@ const NavMessage = () => {
             <li className="nav-item dropdown">
                 <a href="#" className="nav-link nav-icon" data-bs-toggle="dropdown">
                     <i className="bi bi-chat-left-text"></i>
-                    <span className="badge bg-primary badge-number">2</span>
+                    <span className="badge bg-primary badge-number">3</span>
                 </a>
 
                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
@@ -15,7 +15,7 @@ const NavMessage = () => {
                     У вас 2 новых сообщения
                     <a href='#'>
                         <span className="badge rounded-pill bg-primary p-2 ms-2">
-                            View all
+                            Посмотреть все
                         </span>
                     </a>
                 </li>
@@ -32,11 +32,11 @@ const NavMessage = () => {
                             className="rounded-circle" 
                         />
                         <div>
-                            <h4>Babie Clure</h4>
+                            <h4>Сергей Головин</h4>
                             <p>
-                                Velit asperiores et ducimus soluta repudiandae labore officia
+                                Вам пришла заявка на ремонт техники
                             </p>
-                            <p>6 hrs. ago</p>
+                            <p>6 ч. назад</p>
                         </div>
                     </a>
                 </li>
@@ -53,11 +53,11 @@ const NavMessage = () => {
                             className="rounded-circle" 
                         />
                         <div>
-                            <h4>Gandzi Ha</h4>
+                            <h4>Валерий Мечиков</h4>
                             <p>
-                                Velit asperiores et ducimus soluta repudiandae labore officia
+                                Решено: заявка на модификацию!
                             </p>
-                            <p>8 hrs. ago</p>
+                            <p>8 ч. назад</p>
                         </div>
                     </a>
                 </li>
@@ -74,11 +74,11 @@ const NavMessage = () => {
                             className="rounded-circle" 
                         />
                         <div>
-                            <h4>Maria Hudson</h4>
+                            <h4>Мария Хадсон</h4>
                             <p>
-                                Velit asperiores et ducimus soluta repudiandae labore officia
+                                Возьмите пожалуйста мою заявку!
                             </p>
-                            <p>4 hrs. ago</p>
+                            <p>4 ч. назад</p>
                         </div>
                     </a>
                 </li>
@@ -88,7 +88,7 @@ const NavMessage = () => {
                 </li>
 
                 <li className="dropdown-footer">
-                    <a href="#">Show all messages</a>
+                    <a href="#">Показать все</a>
                 </li>
             </ul>
             </li>

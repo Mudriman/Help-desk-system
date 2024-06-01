@@ -15,6 +15,7 @@ position: relative;
  margin: 2px 10px;
  border-radius: 10px;
  &:hover {
+    color: lightgrey;
     background: #ffffff24;
  }
  &.active {
@@ -82,7 +83,7 @@ const SubMenu = styled.div`
  overflow: hidden;
  height: ${(props) => (props.opened === "true" ? props.tall * 59 + 20: 0)}px;
  transition: all 0.4s ease;
- padding: ${(props) => (props.opened === "true" ? "10px 0px" : "0px")}
+ padding: ${(props) => (props.opened === "true" ? "10px 0px" : "0px")};
  margin: 2px 0 2px;
 `;
 
@@ -100,6 +101,7 @@ const SubLinks = styled(NavLink)`
     margin-left:14px;
  }
  &:hover{
+    color: lightgrey;
     background: #ffffff24;
  }
  &.active {
@@ -135,13 +137,13 @@ const SideBarBtns = ({to, icon, title, span, subBtn, handleClick, onClicks}) => 
                 }}
                 onClick={onClicks ? logout : handleClick}
             >
-                <Icon>{icon}</Icon>
+                <Icon><i className={icon}></i></Icon>
                 {title}
                 {span !== undefined && <Newest>{span}</Newest>}
             </NavLinks>
             ) : (
                 <NavBtn onClick={() => handleSubMenu()}>
-                    <Icon>{icon}</Icon>
+                    <Icon><i className={icon}></i></Icon>
                     {title}
                     {span !== undefined && <Newest>{span}</Newest>}
                     {subBtn !== undefined && (
